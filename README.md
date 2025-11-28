@@ -2,7 +2,7 @@
 This repository is an SQL database hosted locally which can be used to simulate a movie rental store
 ## Run instructions:
 to run the database, use the command:
-> 'Get-Content -Raw .\<sql file name> | .\sqlite-tools-win-x64-3510100\sqlite3.exe .\project.db '
+> 'Get-Content -Raw .\<sql file name> | .\sqlite3.exe .\project.db '
 
 ## Suggested order of execution:
 1. First execute the BUILD_TABLES file
