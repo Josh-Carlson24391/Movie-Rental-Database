@@ -19,9 +19,9 @@ CREATE TABLE Employee(
     employee_id INT PRIMARY KEY, 
     manager_id REFERENCES Manager(manager_id),
     name VARCHAR(20), 
+    title VARCHAR(20),
     phone INT, 
-    salary INT, 
-    title VARCHAR(20)
+    salary INT 
     );
 
 
@@ -70,5 +70,6 @@ CREATE TABLE Rental(
     rental_date VARCHAR(10),
     return_date VARCHAR(10)
 );
+
 
 
