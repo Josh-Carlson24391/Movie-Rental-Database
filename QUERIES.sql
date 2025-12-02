@@ -12,7 +12,7 @@ SELECT DISTINCT
 From Movie m
 JOIN Catalog c
     ON m.movie_id = c.movie_id
-WHERE m.genre = 'Action' AND c.available = TRUE;
+WHERE m.genre = 'ACTION' AND c.available = TRUE;
 
 --QUERY 3: When was rental number 6001 checked out?
 SELECT rental_date
@@ -25,10 +25,11 @@ SELECT
 FROM Catalog c
 JOIN Movie m
     ON m.movie_id = c.movie_id
-WHERE m.title = 'Forrest Gump' AND c.available = TRUE;
+WHERE m.title = 'FORREST GUMP' AND c.available = TRUE;
 
 --QUERY 5: When is rental number 6003 supposed to be returned by?
 SELECT return_date
 FROM Rental
 WHERE rental_id = 6003;
+
 
