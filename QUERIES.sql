@@ -1,8 +1,9 @@
 
 
 --QUERY 1: List all employees along with their respective manager names.
-SELECT e.name, m.name from Employee e, Manager m
-WHERE e.manager_id = m.manager_id;
+SELECT e.name AS employee, m.name AS manager
+FROM Employee e
+JOIN Manager m ON e.manager_id = m.manager_id;
 
 --QUERY 2: List all action movies that are in stock.
 SELECT DISTINCT
@@ -30,3 +31,4 @@ WHERE m.title = 'Forrest Gump' AND c.available = TRUE;
 SELECT return_date
 FROM Rental
 WHERE rental_id = 6003;
+
