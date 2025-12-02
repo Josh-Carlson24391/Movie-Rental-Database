@@ -3,6 +3,7 @@ This repository is an SQL database hosted locally which can be used to simulate 
 ## Run instructions:
 to run the database, use the command:
 > 'Get-Content -Raw .\<sql file name> | .\sqlite3.exe .\project.db '
+> Example for presentation: Get-Content -Raw .\CREATE_TABLES.sql | .\sqlite3.exe .\project.db 
 
 ## Suggested order of execution:
 1. First execute the BUILD_TABLES file
