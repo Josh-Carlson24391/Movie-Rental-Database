@@ -10,7 +10,8 @@ CREATE TABLE Manager(
     phone INT, 
     salary INT, 
     years_experience INT, 
-    yearly_bonus INT
+    yearly_bonus INT,
+    CHECK(salary >= 20000) --Managers must make at least $20,000
 );
 
 -- Employee(employee_id, manager_id (FK), name, title, phone, salary)
@@ -19,9 +20,9 @@ CREATE TABLE Employee(
     employee_id INT PRIMARY KEY, 
     manager_id REFERENCES Manager(manager_id),
     name VARCHAR(20), 
-    title VARCHAR(20),
     phone INT, 
-    salary INT 
+    salary INT, 
+    title VARCHAR(20)
     );
 
 
@@ -33,7 +34,7 @@ CREATE TABLE Customer(
     name VARCHAR(20),
     phone INT,
     address VARCHAR(50),
-    email VARCHAR(50),
+    email VARCHAR(50) UNIQUE, --CUSTOMERS MUST HAVE UNIQUE EMAILS
     DOB VARCHAR(10)
 );
 
@@ -42,9 +43,10 @@ CREATE TABLE Movie(
     movie_id INT PRIMARY KEY,
     title VARCHAR(50),
     description VARCHAR(255),
-    length INT,
+    length INT ,
     genre VARCHAR(20),
-    director VARCHAR(30)
+    director VARCHAR(30),
+    CHECK(length >= 60)
 );
 
 -- WEAK ENTITY -> Inventory/Catalog(catalog_id, movie_id(FK), format, condition, available)
@@ -68,8 +70,9 @@ CREATE TABLE Rental(
     employee_id REFERENCES Employee(employee_id),
     price INT,
     rental_date VARCHAR(10),
-    return_date VARCHAR(10)
+    return_date VARCHAR(10),
+    CHECK (return_date IS NULL OR return_date >= rental_date), --Return date must be later than rental date
+    CHECK(price >= 5) --Minimum rental price is $5
 );
-
 
 
